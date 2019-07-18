@@ -1,0 +1,27 @@
+<div class="login-form">
+  <h1>YOUNGER</h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-group ">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <i class="fa fa-user"></i>
+    </div>
+    <div class="form-group log-status">
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      <i class="fa fa-lock"></i>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <span class="alert"><%= t("gem_devise.invalid_credentials") %></span>
+    <%= f.submit t("gem_devise.login"), class: "log-btn" %>
+  <% end %>
+  <div class="log-btn-sign-up">
+    <%= link_to t("gem_devise.sign_up"), new_user_registration_path, class: "log-btn-sign-up" %>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_031909) do
+ActiveRecord::Schema.define(version: 2019_07_20_132833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_031909) do
     t.index ["room_id"], name: "index_file_images_on_room_id"
   end
 
-  create_table "message.rb", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.bigint "room_id"
     t.bigint "user_id"
     t.string "content"
@@ -73,23 +73,29 @@ ActiveRecord::Schema.define(version: 2019_07_19_031909) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.datetime "birthday"
     t.integer "gender"
     t.string "avatar"
     t.boolean "admin"
     t.string "username"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "contacts", "users", column: "request_receiver_id"
   add_foreign_key "contacts", "users", column: "request_sender_id"
-  add_foreign_key "file_images", "message.rb"
+  add_foreign_key "file_images", "messages"
   add_foreign_key "file_images", "rooms"
-  add_foreign_key "message.rb", "rooms"
-  add_foreign_key "message.rb", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
-  add_foreign_key "user_seens", "message.rb"
+  add_foreign_key "user_seens", "messages"
   add_foreign_key "user_seens", "users"
 end
