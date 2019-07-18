@@ -1,0 +1,4 @@
+var id_button_add_friend = "add_user_"+ <%= @contact.request_receiver_id %>;
+var id_button_waiting_request = "waiting_request_user_"+ <%= @contact.request_receiver_id %>;
+$('#'+id_button_add_friend).remove();
+$('#'+id_button_waiting_request).toggle();

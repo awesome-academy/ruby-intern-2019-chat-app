@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(version: 2019_07_20_132833) do
 
   create_table "contacts", force: :cascade do |t|
     t.bigint "request_sender_id"
-    t.bigint "request_receiver_id"
+    t.integer "request_receiver_id"
     t.integer "status"
-    t.index ["request_receiver_id"], name: "index_contacts_on_request_receiver_id"
     t.index ["request_sender_id"], name: "index_contacts_on_request_sender_id"
   end
 
@@ -87,7 +86,6 @@ ActiveRecord::Schema.define(version: 2019_07_20_132833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "contacts", "users", column: "request_receiver_id"
   add_foreign_key "contacts", "users", column: "request_sender_id"
   add_foreign_key "file_images", "messages"
   add_foreign_key "file_images", "rooms"
