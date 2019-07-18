@@ -5,6 +5,14 @@ class Contact < ApplicationRecord
     where user_id_1: user_id_one, user_id_2: user_id_two
   end)
 
+  scope :get_list_friend_request, (lambda do |user_id|
+    where user_id_2: user_id, status: 0
+  end)
+
+  scope :get_list_your_friend, (lambda do |user_id|
+    where user_id_1: user_id, status: 2
+  end)
+
   class << self
     def check_exist_status_contact id, other_user_id
       @contacts = Contact.get_contact_between_two_user(id, other_user_id)

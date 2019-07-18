@@ -39,6 +39,10 @@ en:
       title: "Remove Friend"
       warning: "Do you want to remove friend?"
       agree: "Đồng ý"
+    modal_get_list_friend_request:
+      title: "List Friend Request"
+    modal_list_your_friend:
+      title: "List Friend"
   user:
     card_user:
       add_friend: "Add Friend"
@@ -48,3 +52,5 @@ en:
   contact:
     errors: "Have errors"
   back: "back"
+  home:
+    request_friend: "Request Friend"

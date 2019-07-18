@@ -38,6 +38,24 @@ class ContactsController < ApplicationController
     end
   end
 
+  def list_friend_request
+    @contacts = Contact.get_list_friend_request current_user.id
+    @users = @contacts.map{|c| User.find_by id: c.user_id_2}
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def list_your_friend
+    @contacts = Contact.get_list_your_friend current_user.id
+    @users = @contacts.map{|c| User.find_by id: c.user_id_2}
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def contact_params

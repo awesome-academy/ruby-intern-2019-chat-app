@@ -10,7 +10,7 @@
     <% if current_user.id == user.id %>
     <% else %>
       <% case Contact.check_exist_status_contact(current_user.id, user.id) %>
-    <% when 0 %>
+      <% when 0 %>
         <%= link_to t("user.card_user.add_friend"), add_friend_path(contact: {user_id_2: user.id, status: 0}), method: :post, class: "btn btn-primary", remote: true, id: "add_user_#{user.id}" %>
         <%= link_to t("user.card_user.waiting_confirm"), "", class: "btn btn-secondary disabled user_wait", id: "waiting_request_user_#{user.id}" %>
       <% when 1 %>
