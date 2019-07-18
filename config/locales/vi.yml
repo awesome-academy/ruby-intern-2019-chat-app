@@ -49,6 +49,7 @@ vi:
       waiting_confirm: "Đang chờ xác nhận"
       confirm_friend: "Xác nhận"
       destroy_friend: "Hủy kết bạn"
+      send_message: "Nhắn tin"
   contact:
     errors: "Đã xảy ra lỗi!"
   back: "Quay lại"

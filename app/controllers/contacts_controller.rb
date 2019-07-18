@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
 
   def list_friend_request
     @contacts = Contact.get_list_friend_request current_user.id
-    @users = @contacts.map{|c| User.find_by id: c.user_id_2}
+    @users = @contacts.map{|c| User.find_by id: c.user_id_1}
 
     respond_to do |format|
       format.js

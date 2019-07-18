@@ -3,7 +3,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
     create_table :rooms do |t|
       t.string :name
       t.string :description
-      t.integer :owner_id
+      t.references :owner, foreign_key: { to_table: :users }
       t.integer :type
     end
   end
