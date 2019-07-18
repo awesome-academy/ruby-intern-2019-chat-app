@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_132833) do
+ActiveRecord::Schema.define(version: 2019_07_24_071456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
-    t.bigint "request_sender_id"
-    t.integer "request_receiver_id"
+    t.bigint "user_id_1"
+    t.integer "user_id_2"
     t.integer "status"
-    t.index ["request_sender_id"], name: "index_contacts_on_request_sender_id"
+    t.index ["user_id_1"], name: "index_contacts_on_user_id_1"
   end
 
   create_table "file_images", force: :cascade do |t|
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_132833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "contacts", "users", column: "request_sender_id"
+  add_foreign_key "contacts", "users", column: "user_id_1"
   add_foreign_key "file_images", "messages"
   add_foreign_key "file_images", "rooms"
   add_foreign_key "messages", "rooms"

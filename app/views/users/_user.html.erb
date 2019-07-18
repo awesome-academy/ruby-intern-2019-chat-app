@@ -6,12 +6,22 @@
     <p class="card-text"><%= user.username %></p>
     <p class="card-text"><%= user.gender %></p>
     <p class="card-text"><%= user.birthday %></p>
-    <p><%= Contact.check_exist_status_contact(current_user.id, user.id) %></p>
-    <% if current_user.id == user.id %>
 
-    <% elsif Contact.check_exist_status_contact(current_user.id, user.id) == 0 %>
-      <%= link_to t("user.card_user.add_friend"), add_friend_path(contact: {request_receiver_id: user.id, status: 0}), method: :post,class: "btn btn-primary", remote: true, id: "add_user_#{user.id}" %>
-      <%= link_to t("user.card_user.waiting_confirm"), "#", class: "btn btn-secondary disabled", id:"waiting_request_user_#{user.id}", style: "display: none"%>
+
+    <% if current_user.id == user.id %>
+    <% else %>
+      <% case Contact.check_exist_status_contact(current_user.id, user.id) %>
+    <% when 0 %>
+        <%= link_to t("user.card_user.add_friend"), add_friend_path(contact: {user_id_2: user.id, status: 0}), method: :post, class: "btn btn-primary", remote: true, id: "add_user_#{user.id}" %>
+        <%= link_to t("user.card_user.waiting_confirm"), "#", class: "btn btn-secondary disabled user_wait", id: "waiting_request_user_#{user.id}" %>
+      <% when 1 %>
+        <%= link_to t("user.card_user.waiting_confirm"), "#", class: "btn btn-secondary disabled" %>
+      <% when 2 %>
+        <%= link_to t("user.card_user.confirm_friend"), add_friend_path(contact: {request_receiver_id: user.id, status: 1}), method: :post, class: "btn btn-primary", remote: true, id: "confirm_request_#{user.id}" %>
+        <%= link_to t("user.card_user.destroy_friend"), "#", class: "btn btn-danger user_wait", id: "friend_#{user.id}" %>
+      <% when 3 %>
+        <%= link_to t("user.card_user.destroy_friend"), "#", class: "btn btn-danger", id: "friend_#{user.id}" %>
+      <% end %>
     <% end %>
   </div>
 </div>
