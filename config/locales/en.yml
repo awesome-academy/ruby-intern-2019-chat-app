@@ -35,6 +35,10 @@ en:
     modal_search_user:
       title: "Find User"
       search_button: "Search"
+    modal_remove_friend:
+      title: "Remove Friend"
+      warning: "Do you want to remove friend?"
+      agree: "Đồng ý"
   user:
     card_user:
       add_friend: "Add Friend"
