@@ -1,0 +1,9 @@
+carduser:
+  size_image: 200
+user:
+  limit_user: 10
+contact:
+  status_add_friend: 0
+  status_pending_friend: 1
+  status_added_friend: 2
+  status_become_friend: 3

@@ -17,4 +17,24 @@ vi:
     birthday: "Ngày sinh"
     name: "Họ và tên"
     username: "User Name"
+    leave_not_change_pass: ""
+    cf_current_pass: "(*)"
+  modal:
+    close: "Thoát"
+    cancel: "Cancel"
+    crop: "Crop"
+    edit_photo: "Chỉnh sửa ảnh"
+    modal_edit_user:
+      title: "Sửa thông tin cá nhân"
+    modal_get_user:
+      title: "Tìm kiếm bạn bè"
+    modal_log_out:
+      title: "Đăng xuất"
+      warning: "Bạn có muốn đăng xuất khỏi chương trình chat này không?"
+    modal_search_user:
+      title: "Tìm kiếm bạn bè"
+      search_button: "Tìm kiếm"
+  user:
+    card_user:
+      add_friend: "Thêm bạn bè"
   back: "Quay lại"
