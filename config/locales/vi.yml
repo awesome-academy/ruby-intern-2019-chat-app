@@ -1,6 +1,7 @@
 vi:
   gem_devise:
     login: "Đăng nhập"
+    logout: "Đăng xuất"
     sign_up: "Đăng ký"
     update: "Hoàn Thành"
     invalid_credentials: "Thông tin xác thực không đúng"
@@ -9,4 +10,11 @@ vi:
     new_pass: "Mật khẩu mới"
     new_pass_cf: "Xác nhận mật khẩu"
     min_character: "kí tự tối thiểu"
+    password: "Mật khẩu"
+    email: "Email"
+    pass_cf: "Xác nhận lại mật khẩu"
+    gender: "Giới tính"
+    birthday: "Ngày sinh"
+    name: "Họ và tên"
+    username: "User Name"
   back: "Quay lại"

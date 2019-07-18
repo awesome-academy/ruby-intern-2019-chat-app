@@ -1,6 +1,7 @@
 en:
   gem_devise:
     login: "Log In"
+    logout: "Logout"
     sign_up: "Sign Up"
     update: "Update"
     invalid_credentials: "Invalid Credentials"
@@ -9,4 +10,11 @@ en:
     new_pass: "New Password"
     new_pass_cf: "Password Confirm"
     min_character: "minimum character"
+    password: "Password"
+    email: "Email"
+    pass_cf: "Password Confirm"
+    gender: "Gender"
+    birthday: "Birth day"
+    name: "Name"
+    username: "User Name"
   back: "back"
