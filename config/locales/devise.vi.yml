@@ -1,0 +1,37 @@
+vi:
+  devise:
+    confirmations:
+      confirmed: "Email của bạn đã được xác nhận thành công."
+    failure:
+      already_authenticated: "Bạn đã được đăng nhập."
+      inactive: "Tài khoản của bạn chưa được xác thực"
+      invalid: "%{authentication_keys} hoặc password không đúng"
+      locked: "Tài khoản của bạn đã bị khóa"
+      not_found_in_database: "%{authentication_keys} hoặc password không đúng"
+      timeout: "Session đăng nhập của bạn đã quá hạn. Vui lòng thực hiện đăng nhập lại"
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục"
+      unconfirmed: "Bạn cần xác nhận email trước khi tiếp tục"
+    passwords:
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      updated: "Mật khẩu của bạn đã được đổi thành công. Bây giờ bạn cần phải thực hiện đăng nhập lại"
+      updated_not_active: "Mật khẩu của bạn được đổi thành công"
+    registrations:
+      signed_up: "Tài khoản đã được đăng ký thành công"
+      signed_up_but_inactive: "Bạn đã tạo tài khoản thành công. Tuy nhiên chưa thể đăng nhập do chưa kích hoạt tài khoản thông qua email"
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
+      updated: "Tài khoản của bạn đã được cập nhật thành công"
+      updated_but_not_signed_in: "Tài khoản của bạn đã được cập nhật thành công. Nhưng do mật khẩu của bạn đã được thay đổi, do đó bạn cần đăng nhập lại"
+    sessions:
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      already_signed_out: "Đã đăng xuất thành công"
+  errors:
+    messages:
+      already_confirmed: "đã được xác nhận, hãy thử đăng nhập lại"
+      confirmation_period_expired: "cần được xác nhận với %{period}, hãy yêu cầu một lần nữa"
+      expired: "đã quá hạn, hãy yêu cầu 1 lần nữa"
+      not_found: "không tìm thấy"
+      not_locked: "chưa được khóa"
+      not_saved:
+        one: "1 lỗi %{resource} xuất hiện"
+        other: "%{count} lỗi %{resource} xuất hiện"

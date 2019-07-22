@@ -1,4 +1,4 @@
-class UserRoom < ActiveRecord
+class UserRoom < ApplicationRecord
   has_many :users
   belongs_to :room
 end

@@ -1,0 +1,12 @@
+vi:
+  gem_devise:
+    login: "Đăng nhập"
+    sign_up: "Đăng ký"
+    update: "Hoàn Thành"
+    invalid_credentials: "Thông tin xác thực không đúng"
+    change_pass: "Thay đổi mật khẩu"
+    send_pass: "Send me reset password instructions"
+    new_pass: "Mật khẩu mới"
+    new_pass_cf: "Xác nhận mật khẩu"
+    min_character: "kí tự tối thiểu"
+  back: "Quay lại"
