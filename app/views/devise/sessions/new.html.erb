@@ -2,12 +2,14 @@
   <h1>YOUNGER</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+    <p class="alert"><%= alert %></p>
+
     <div class="form-group ">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <%= f.email_field :email, autofocus: true, placeholder: t("gem_devise.email"), autocomplete: "email", class: "form-control" %>
       <i class="fa fa-user"></i>
     </div>
     <div class="form-group log-status">
-      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: t("gem_devise.password"), class: "form-control" %>
       <i class="fa fa-lock"></i>
     </div>
 
@@ -17,8 +19,6 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-
-    <span class="alert"><%= t("gem_devise.invalid_credentials") %></span>
     <%= f.submit t("gem_devise.login"), class: "log-btn" %>
   <% end %>
   <div class="log-btn-sign-up">
