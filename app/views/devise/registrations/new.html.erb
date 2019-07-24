@@ -3,9 +3,15 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="form-group ">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("gem_devise.email"), class: "form-control" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: t("gem_devise.email"), placeholder: t("gem_devise.email"), class: "form-control" %>
       <i class="fa fa-envelope"></i>
     </div>
+
+    <div class="form-group ">
+      <%= f.text_field :name, autofocus: true, placeholder: t("gem_devise.name"), class: "form-control" %>
+      <i class="fa fa-user"></i>
+    </div>
+
     <div class="form-group ">
       <%= f.text_field :username, autofocus: true, placeholder: t("gem_devise.username"), class: "form-control" %>
       <i class="fa fa-user"></i>

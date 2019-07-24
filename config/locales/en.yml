@@ -17,4 +17,24 @@ en:
     birthday: "Birth day"
     name: "Name"
     username: "User Name"
+    leave_not_change_pass: ""
+    cf_current_pass: "(*)"
+  modal:
+    close: "Close"
+    cancel: "Cancel"
+    crop: "Crop"
+    edit_photo: "Edit Photo"
+    modal_edit_user:
+      title: "Edit user"
+    modal_get_user:
+      title: "Find User"
+    modal_log_out:
+      title: "Logout"
+      warning: "Do you want to close chat app?"
+    modal_search_user:
+      title: "Find User"
+      search_button: "Search"
+  user:
+    card_user:
+      add_friend: "Thêm bạn bè"
   back: "back"
