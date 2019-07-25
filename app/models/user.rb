@@ -9,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable
   has_many :rooms, dependent: :destroy
-  has_many :contacts, dependent: :destroy, foreign_key: "request_sender_id"
+  has_many :contacts, dependent: :destroy, foreign_key: "user_id_1"
   has_many :notifications
 
   validates :username, uniqueness: true, presence: true

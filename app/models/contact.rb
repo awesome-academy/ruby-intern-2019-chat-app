@@ -1,8 +1,8 @@
 class Contact < ApplicationRecord
-  belongs_to :user, foreign_key: "request_sender_id"
+  belongs_to :user, foreign_key: "user_id_1"
 
   scope :get_contact_between_two_user, (lambda do |user_id_one, user_id_two|
-    where request_sender_id: user_id_one, request_receiver_id: user_id_two
+    where user_id_1: user_id_one, user_id_2: user_id_two
   end)
 
   class << self
@@ -11,6 +11,7 @@ class Contact < ApplicationRecord
       return 0 if @contacts.first.nil?
       return 1 if @contacts.first.status.zero?
       return 2 if @contacts.first.status == 1
+      return 3 if @contacts.first.status == 2
     end
   end
 end
