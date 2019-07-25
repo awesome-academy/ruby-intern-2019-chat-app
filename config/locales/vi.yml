@@ -35,6 +35,10 @@ vi:
     modal_search_user:
       title: "Tìm kiếm bạn bè"
       search_button: "Tìm kiếm"
+    modal_remove_friend:
+      title: "Hủy lời mời kết bạn"
+      warning: "Bạn có muốn hủy bạn bè với người này không?"
+      agree: "Đồng ý"
   user:
     card_user:
       add_friend: "Thêm bạn bè"
