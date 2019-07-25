@@ -8,12 +8,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
-      <div class="avatar text-center">
-            <img class="card-img-top rounded-circle img-responsive img-edit-avatar" src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="Card image" >
+        <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {method: :put}) do |f| %>
+          <div class="avatar text-center">
+            <img class="card-img-top rounded-circle img-responsive img-edit-avatar" src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="Card image">
             <div class="change-avatar-profile text-center gambar">
-              <span>Đổi ảnh đại diện</span>
-              <input type="file" name="avatar" onchange="updateAvatarProfile(event)">
+              <span><%= t("modal.modal_edit_user.change_avatar") %></span>
+              <input type="file" name="avatar">
             </div>
           </div>
 
@@ -51,7 +51,7 @@
 
           <div class="form-group">
             <%= f.label :password %> <i><%= t("gem_devise.leave_not_change_pass") %></i><br/>
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("gem_devise.password")%>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("gem_devise.password") %>
           </div>
           <div class="form-group">
             <%= f.label :password_confirmation %><br/>

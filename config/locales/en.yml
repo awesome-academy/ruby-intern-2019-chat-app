@@ -26,6 +26,7 @@ en:
     edit_photo: "Edit Photo"
     modal_edit_user:
       title: "Edit user"
+      change_avatar: "Change Avatar"
     modal_get_user:
       title: "Find User"
     modal_log_out:
@@ -36,5 +37,10 @@ en:
       search_button: "Search"
   user:
     card_user:
-      add_friend: "Thêm bạn bè"
+      add_friend: "Add Friend"
+      waiting_confirm: "Waiting confirm"
+      confirm_friend: "Confirm"
+      destroy_friend: "Remove Friend"
+  contact:
+    errors: "Have errors"
   back: "back"

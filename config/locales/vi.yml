@@ -26,6 +26,7 @@ vi:
     edit_photo: "Chỉnh sửa ảnh"
     modal_edit_user:
       title: "Sửa thông tin cá nhân"
+      change_avatar: "Đổi ảnh đại diện"
     modal_get_user:
       title: "Tìm kiếm bạn bè"
     modal_log_out:
@@ -37,4 +38,9 @@ vi:
   user:
     card_user:
       add_friend: "Thêm bạn bè"
+      waiting_confirm: "Đang chờ xác nhận"
+      confirm_friend: "Xác nhận"
+      destroy_friend: "Hủy kết bạn"
+  contact:
+    errors: "Đã xảy ra lỗi!"
   back: "Quay lại"
