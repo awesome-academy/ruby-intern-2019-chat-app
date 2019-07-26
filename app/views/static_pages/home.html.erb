@@ -10,6 +10,9 @@
 <div id="frame">
   <div id="sidepanel">
     <div id="profile">
+      <div class="your-friend text-center">
+       <%= link_to "", list_your_friend_path, class: "fa fa-user fa-2x", data: {toggle: "modal", target: "#form-list-your-friend"}, remote: true %>
+      </div>
       <div class="wrap">
         <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt=""/>
         <p>Mike Ross</p>
@@ -157,9 +160,8 @@
       </ul>
     </div>
     <div id="bottom-bar">
-
       <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>  <%= link_to "Add contact", get_user_path, remote: true%></span></button>
-      <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
+      <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span><%= link_to t("home.request_friend"), list_friend_request_path, remote: true%></span></button>
     </div>
   </div>
   <div class="content">
@@ -222,3 +224,5 @@
 <%= render "modal/modal_edit_user" %>
 <%= render "modal/modal_search_user" %>
 <%= render "modal/modal_get_user" %>
+<%= render "modal/modal_get_list_friend_request" %>
+<%= render "modal/modal_list_your_friend" %>

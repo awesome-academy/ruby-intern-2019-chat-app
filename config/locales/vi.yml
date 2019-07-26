@@ -39,6 +39,10 @@ vi:
       title: "Hủy lời mời kết bạn"
       warning: "Bạn có muốn hủy bạn bè với người này không?"
       agree: "Đồng ý"
+    modal_get_list_friend_request:
+      title: "Danh sách lời mời kết bạn"
+    modal_list_your_friend:
+      title: "Danh sách bạn bè"
   user:
     card_user:
       add_friend: "Thêm bạn bè"
@@ -48,3 +52,5 @@ vi:
   contact:
     errors: "Đã xảy ra lỗi!"
   back: "Quay lại"
+  home:
+    request_friend: "Lời mời kết bạn"

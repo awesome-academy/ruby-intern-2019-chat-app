@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     post "/add-friend", to: "contacts#create"
     post "/confirm-friend", to: "contacts#update"
     delete "/remove-friend", to: "contacts#destroy"
+    get "/list-friend-request", to: "contacts#list_friend_request"
+    get "/list-your-friend", to: "contacts#list_your_friend"
   end
 end
