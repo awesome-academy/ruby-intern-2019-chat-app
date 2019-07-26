@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  try {
+    Typekit.load({
+      async: true
+    });
+  } catch (e) {
+  }
+
   $(".messages").animate({
     scrollTop: $(document).height()
   }, "fast");
@@ -29,6 +36,7 @@ $(document).ready(function () {
     } else if ($("#status-offline").hasClass("active")) {
       $("#profile-img").addClass("offline");
     }
+
 
     $("#status-options").removeClass("active");
   });

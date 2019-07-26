@@ -1,15 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.create!(name: "Thái Thị Tiến",
              username: "thaitien",
              email: "thaithitien1997@gmail.com",
              password: "12345678",
              gender: 2,
+             avatar: "avatar_default.png",
              birthday: "25/06/1997",
              password_confirmation: "12345678")
 User.create!(name: "Nguyen Ba Hung",
@@ -17,6 +11,7 @@ User.create!(name: "Nguyen Ba Hung",
              email: "hungpronguyen256@gmail.com",
              password: "12345678",
              gender: 1,
+             avatar: "avatar_default.png",
              birthday: "25/06/1997",
              password_confirmation: "12345678",
              admin: true)
@@ -29,6 +24,40 @@ User.create!(name: "Nguyen Ba Hung",
                email: email,
                password: password,
                gender: 1,
+               avatar: "avatar_default.png",
                birthday: "25/06/1997",
                password_confirmation: password)
 end
+
+Contact.create user_id_1: 1, user_id_2: 2, status: 2
+Contact.create user_id_1: 1, user_id_2: 3, status: 2
+Contact.create user_id_1: 1, user_id_2: 4, status: 2
+
+Contact.create user_id_1: 2, user_id_2: 1, status: 2
+Contact.create user_id_1: 3, user_id_2: 1, status: 2
+Contact.create user_id_1: 4, user_id_2: 1, status: 2
+
+Contact.create user_id_1: 2, user_id_2: 3, status: 2
+Contact.create user_id_1: 2, user_id_2: 4, status: 2
+
+Contact.create user_id_1: 3, user_id_2: 2, status: 2
+Contact.create user_id_1: 4, user_id_2: 2, status: 2
+
+r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
+c = r.user_rooms.build user_id: 2, admin: false
+c.save
+
+r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
+c = r.user_rooms.build user_id: 3, admin: false
+c.save
+
+r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
+c = r.user_rooms.build user_id: 4, admin: false
+c.save
+
+r = Room.create owner_id: 2, kind: 0, name: "Nguyen Quynh"
+r.user_rooms.build user_id: 3, admin: false
+
+r = Room.create owner_id: 2, kind: 0, name: "Nguyen Quynh"
+c = r.user_rooms.build user_id: 4, admin: false
+c.save

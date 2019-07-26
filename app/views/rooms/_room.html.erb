@@ -1,0 +1,12 @@
+<li class="contact" id="room_chat_<%= room.id %>">
+  <div class="wrap">
+    <span class="contact-status online"></span>
+    <% if room.kind.zero? %>
+      <%= image_tag room.user_rooms.first.user.avatar, alt: "" %>
+    <% end %>
+    <div class="meta">
+      <p class="name"><%= room.name %></p>
+      <p class="preview"><%= room.name %></p>
+    </div>
+  </div>
+</li>

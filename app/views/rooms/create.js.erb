@@ -1,0 +1,3 @@
+$('#contacts ul #room_chat_<%=@room.id %>').remove();
+$('#contacts ul').prepend("<%= j render @room %>");
+$('.modal').modal('hide');

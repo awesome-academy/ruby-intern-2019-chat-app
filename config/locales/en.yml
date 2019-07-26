@@ -49,6 +49,7 @@ en:
       waiting_confirm: "Waiting confirm"
       confirm_friend: "Confirm"
       destroy_friend: "Remove Friend"
+      send_message: "Send Message"
   contact:
     errors: "Have errors"
   back: "back"

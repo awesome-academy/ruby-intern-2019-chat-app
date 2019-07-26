@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "owner_id"
-    t.integer "type"
+    t.bigint "owner_id"
+    t.integer "kind"
+    t.index ["owner_id"], name: "index_rooms_on_owner_id"
   end
 
   create_table "user_rooms", force: :cascade do |t|
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "rooms", "users", column: "owner_id"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
   add_foreign_key "user_seens", "messages"
