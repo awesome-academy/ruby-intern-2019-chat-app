@@ -4,6 +4,7 @@ class CreateUserSeen < ActiveRecord::Migration[5.2]
       t.references :message, foreign_key: true
       t.references :user, foreign_key: true
       t.integer :status
+      t.timestamps
     end
   end
 end

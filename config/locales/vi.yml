@@ -55,3 +55,6 @@ vi:
   back: "Quay lại"
   home:
     request_friend: "Lời mời kết bạn"
+  room:
+    you: "Bạn"
+    upload_file: "Đã tải lên 1 file"
