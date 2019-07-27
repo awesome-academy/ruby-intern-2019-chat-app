@@ -7,3 +7,9 @@ contact:
   status_pending_friend: 1
   status_added_friend: 2
   status_become_friend: 3
+user_valid:
+  max_length_name: 30
+  max_length_username: 15
+  max_length_email: 255
+  max_length_passwd: 20
+  min_length_passwd: 6

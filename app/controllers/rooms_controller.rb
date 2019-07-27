@@ -15,9 +15,7 @@ class RoomsController < ApplicationController
     else
       @room = @rooms.first
       @user_room = @room.user_rooms.first
-      respond_to do |format|
-        format.js
-      end
+      respond_to(&:js)
     end
   end
 

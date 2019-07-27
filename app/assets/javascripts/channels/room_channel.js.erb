@@ -2,17 +2,17 @@ $(function () {
   $('[data-channel-subscribe="room"]').each(function (index, element) {
     var $element = $(element),
       room_id = $element.data('room-id');
-
     App.cable.subscriptions.create(
       {
         channel: "RoomChannel",
-        room_id: room_id,
+        room_id: room_id
       },
       {
         connected: function () {
         },
         disconnected: function () {
         },
+
         received: function (data) {
           var preview_chat;
           if (data.kind == 0) {

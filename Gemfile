@@ -25,9 +25,14 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot", require: false
+  gem "rails-controller-testing"
+  gem "rspec-rails"
+  gem "shoulda-matchers", require: false
 end
 
 group :development do
+  gem "factory_girl_rails"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

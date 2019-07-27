@@ -76,26 +76,18 @@
       <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>
         <span><%= link_to t("home.request_friend"), list_friend_request_path, remote: true %></span>
       </button>
-
     </div>
   </div>
 
   <div class="content">
     <div class="head-chat">
-
     </div>
-    <!--    <div class="notify">-->
-    <%# flash.each do |message_type, message| %>
-    <!--        <div class="alert alert-<%#= message_type %>"><%#= message %></div>-->
-    <%# end %>
-    <!--    </div>-->
     <div class="messages">
       <ul>
         <%= render @messages %>
       </ul>
     </div>
     <div class="message-input" id="message-form-submit">
-
     </div>
   </div>
 </div>
