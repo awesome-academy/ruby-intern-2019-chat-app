@@ -23,6 +23,7 @@
       <%= link_to t("user.card_user.destroy_friend"), remove_friend_path(contact: {user_id_2: user.id, status: -1}), method: :delete, class: "btn btn-danger", id: "remove_friend_#{user.id}",remote: true %>
       <%= link_to t("user.card_user.send_message"), get_room_chat_path(room: {user_id: user.id, kind: 0}), class: "btn btn-info btn-send-message", id: "send_message_#{user.id}", remote: true %>
       <%= link_to t("user.card_user.add_friend"), add_friend_path(contact: {user_id_2: user.id, status: 0}), method: :post, class: "btn btn-primary user_wait", remote: true, id: "add_user_#{user.id}" %>
+      <%= link_to t("user.card_user.confirm_friend"), confirm_friend_path(contact: {user_id_2: user.id, status: 2}), method: :post, class: "btn btn-warning user_wait", remote: true, id: "confirm_request_#{user.id}" %>
     <% end %>
   </div>
 </div>

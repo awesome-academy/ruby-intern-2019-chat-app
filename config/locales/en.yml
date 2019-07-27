@@ -55,3 +55,6 @@ en:
   back: "back"
   home:
     request_friend: "Request Friend"
+  room:
+    you: "You"
+    upload_file: "Upload a file"

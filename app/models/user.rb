@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :contacts, dependent: :destroy, foreign_key: "user_id_1"
   has_many :notifications
   has_many :user_rooms
+  has_many :messages
 
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true

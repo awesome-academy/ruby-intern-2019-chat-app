@@ -1,12 +1,33 @@
-<li class="contact" id="room_chat_<%= room.id %>">
-  <div class="wrap">
-    <span class="contact-status online"></span>
-    <% if room.kind.zero? %>
-      <%= image_tag room.user_rooms.first.user.avatar, alt: "" %>
-    <% end %>
-    <div class="meta">
-      <p class="name"><%= room.name %></p>
-      <p class="preview"><%= room.name %></p>
+<%= link_to get_message_room_chat_path(message: {room_id: room.id}), remote: true, "data-channel-subscribe" => "room", "data-room-id" => room.id do %>
+  <li class="contact" id="room_chat_<%= room.id %>">
+    <div class="wrap">
+      <span class="contact-status online"></span>
+      <% if room.kind.zero? %>
+        <%= image_tag room.user_rooms.first.user.avatar, alt: "" %>
+      <% end %>
+      <div class="meta room_chat_text">
+        <p class="name"><%= room.name %></p>
+        <% if room.messages.last.present? %>
+          <p class="preview">
+            <% if room.messages.last.user_id == current_user.id %>
+              <% if room.messages.last.kind.zero? %>
+                <%= t("room.you") %> :<%= room.messages.last.content %>
+              <% else %>
+                <%= t("room.you") %> :<%= t("room.upload_file") %>
+              <% end %>
+            <% else %>
+              <% if room.messages.last.kind.zero? %>
+                <%= room.messages.last.user.name %>: <%= room.messages.last.content %>
+
+          <% else %>
+                <%= room.messages.last.user.name %>: <%= t("room.upload_file") %>
+              <% end %>
+            <% end %>
+          </p>
+        <% else %>
+          <p class="preview"></p>
+        <% end %>
+      </div>
     </div>
-  </div>
-</li>
+  </li>
+<% end %>

@@ -1,0 +1,46 @@
+<% if message.present? && message.kind.present? && message.kind.zero? %>
+  <% if current_user.id == message.user_id %>
+    <li class="sent" data-toggle="tooltip" title="<%= message.user.name %>&#013;<%= message.created_at.strftime("%F %T") %>">
+      <%= image_tag current_user.avatar, class: "avatar-left" %>
+      <p><%= message.content %></p>
+    </li>
+  <% elsif current_user.id != message.user_id && message.user_id.present? %>
+    <li class="replies" data-toggle="tooltip" title="<%= message.user.name %>&#013;<%= message.created_at.strftime("%F %T") %>">
+      <%= image_tag message.user.avatar, class: "avatar-right"  %>
+      <p><%= message.content %></p>
+    </li>
+  <% end %>
+
+<% else %>
+  <% if current_user.id == message.user_id %>
+    <li class="sent" data-toggle="tooltip" title="<%= message.user.name %>&#013;<%= message.created_at.strftime("%F %T") %>">
+      <%= image_tag current_user.avatar, class: "avatar-left"  %>
+      <div class="content-chat-file">
+        <img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file">
+
+        <div class="step-content-chat-file">
+         <a href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
+        </div>
+        <div class="step-content-size-save">
+          <!--          <a class="icon-download"></a>-->
+          <span><%= message.file_images.first.file.size %> Kb</span>
+        </div>
+      </div>
+
+    </li>
+  <% elsif current_user.id != message.user_id && message.user_id.present? %>
+    <li class="replies" data-toggle="tooltip" title="<%= message.user.name %>&#013;<%= message.created_at.strftime("%F %T") %>">
+      <%= image_tag message.user.avatar, class: "avatar-right"  %>
+      <div class="content-chat-file">
+        <img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file">
+
+        <div class="step-content-chat-file">
+          <a href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
+        </div>
+        <div class="step-content-size-save">
+          <span><%= message.file_images.first.file.size %> Kb</span>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>

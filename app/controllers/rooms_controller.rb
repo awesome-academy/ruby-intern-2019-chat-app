@@ -20,7 +20,7 @@ class RoomsController < ApplicationController
 
   def find_rooms
     @rooms = Room.get_room_two_person_of_user_is_owner current_user.id,
-                                                       room_params[:user_id]
+      room_params[:user_id]
     @user = User.find_by id: room_params[:user_id]
   end
 

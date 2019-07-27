@@ -1,0 +1,9 @@
+function newMessage() {
+  new_message = $(".message-input #message_content").val();
+  if ($.trim(new_message) == '') {
+    return false;
+  }
+  $('.message-input #message_content').val(null);
+};
+
+newMessage();

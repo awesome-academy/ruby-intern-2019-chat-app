@@ -47,17 +47,18 @@ r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
 c = r.user_rooms.build user_id: 2, admin: false
 c.save
 
-r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
+r = Room.create owner_id: 1, kind: 0, name: "Nguyen Hang"
 c = r.user_rooms.build user_id: 3, admin: false
 c.save
 
-r = Room.create owner_id: 1, kind: 0, name: "Nguyen Quynh"
+r = Room.create owner_id: 1, kind: 0, name: "Dao Cong Chinh"
 c = r.user_rooms.build user_id: 4, admin: false
 c.save
 
-r = Room.create owner_id: 2, kind: 0, name: "Nguyen Quynh"
-r.user_rooms.build user_id: 3, admin: false
+r = Room.create owner_id: 2, kind: 0, name: "Liem Thanh Khiet"
+c= r.user_rooms.build user_id: 3, admin: false
+c.save
 
-r = Room.create owner_id: 2, kind: 0, name: "Nguyen Quynh"
+r = Room.create owner_id: 2, kind: 0, name: "Nguyen Ngoc Ngan"
 c = r.user_rooms.build user_id: 4, admin: false
 c.save
