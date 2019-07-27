@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email, null: false, default: ""
       t.datetime :birthday
       t.integer :gender
-      t.string :avatar
+      t.string :avatar, default: "avatar_default.png"
       t.boolean :admin
       t.string :username
       t.timestamps

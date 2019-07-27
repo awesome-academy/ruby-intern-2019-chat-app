@@ -1,16 +1,21 @@
 $('#room_chat_<%= params[:message][:room_id] %>').css({
   'background': '#32465a'
 });
-
 $("[id^=room_chat_]").not('#room_chat_<%= params[:message][:room_id] %>')
   .css("background-color", "")
 
 $('#frame .content .messages ul').html("<%= j render @messages %>")
 
+$('#frame .content .head-chat').html("<%= j render "shared/header_chat", room: @room %>")
+
 $('#frame .content .messages').addClass('content_room_chat_<%= params[:message][:room_id] %>')
+$('.manage-file').addClass('manage_file_<%= params[:message][:room_id] %>')
 
 $('#message-form-submit').html("<%= j render 'shared/submit_form', message: @new_message, room_id: @room_id%>")
 
+$('#frame .content').attr('data-room-id', '<%= @room_id %>');
+
+$('.img-new-message-<%= params[:message][:room_id]%>').hide();
 $(".messages").animate({
   scrollTop: $('.messages')[0].scrollHeight
 }, "fast");

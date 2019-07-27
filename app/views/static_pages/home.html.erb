@@ -3,10 +3,29 @@
     <div id="profile">
       <div class="your-friend text-center">
         <%= link_to "", list_your_friend_path, class: "fa fa-user fa-2x", data: {toggle: "modal", target: "#form-list-your-friend"}, remote: true %>
+        <%= link_to "", "", class: "fa fa-group fa-2x add-group", data: {toggle: "modal", target: "#form-create-group"} %>
+        <% if NotificationsController.check_notification_not_seen current_user.id %>
+          <%= link_to image_tag("bell_noti.png", class: "img-notify img-notify-new"), list_notification_path, data: {toggle: "modal", target: "#form-create-group"}, remote: true %>
+
+      <% else %>
+          <%= link_to image_tag("ic_bell.png", class: "img-notify img-notify-not-new"), list_notification_path, data: {toggle: "modal", target: "#form-create-group"}, remote: true %>
+
+      <% end %>
       </div>
+
       <div class="wrap">
-        <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt=""/>
-        <p>Mike Ross</p>
+        <% case current_user.status %>
+        <% when 0 %>
+          <% @status = "online" %>
+        <% when 1 %>
+          <% @status = "away" %>
+        <% when 2 %>
+          <% @status = "busy" %>
+        <% when 3 %>
+          <% @status = "offline" %>
+        <% end %>
+        <%= image_tag current_user.avatar, :id => "profile-img", class: @status %>
+        <p><%= current_user.name %></p>
         <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
         <div id="status-options">
           <ul>
@@ -24,8 +43,6 @@
             </li>
           </ul>
         </div>
-
-
         <div id="expanded">
 
           <div class="edit-user">
@@ -57,32 +74,27 @@
       <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
         <span>  <%= link_to t("user.card_user.add_friend"), get_user_path, remote: true %></span></button>
       <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>
-        <span><%= link_to t("home.request_friend"), list_friend_request_path, remote: true %></span></button>
+        <span><%= link_to t("home.request_friend"), list_friend_request_path, remote: true %></span>
+      </button>
 
     </div>
   </div>
 
   <div class="content">
-    <div class="contact-profile">
-      <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt=""/>
-      <p>Harvey Specter</p>
-      <div class="social-media">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-      </div>
+    <div class="head-chat">
+
     </div>
-    <div class="notify">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-    </div>
+    <!--    <div class="notify">-->
+    <%# flash.each do |message_type, message| %>
+    <!--        <div class="alert alert-<%#= message_type %>"><%#= message %></div>-->
+    <%# end %>
+    <!--    </div>-->
     <div class="messages">
       <ul>
         <%= render @messages %>
       </ul>
     </div>
-    <div class="message-input" , id="message-form-submit">
+    <div class="message-input" id="message-form-submit">
 
     </div>
   </div>
@@ -93,3 +105,8 @@
 <%= render "modal/modal_get_user" %>
 <%= render "modal/modal_get_list_friend_request" %>
 <%= render "modal/modal_list_your_friend" %>
+<%= render "modal/modal_show_file_room" %>
+<%= render "modal/modal_create_group" %>
+<%= render "modal/modal_add_user_into_group" %>
+<%= render "modal/modal_show_user_in_group" %>
+<%= render "modal/modal_notification" %>

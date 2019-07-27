@@ -43,6 +43,15 @@ en:
       title: "List Friend Request"
     modal_list_your_friend:
       title: "List Friend"
+    modal_show_file_room:
+      title: "List File"
+    modal_create_group:
+      title: "Create Group"
+      name: "Name Group"
+      description: "Description"
+      submit: "Create Group"
+    modal_notification:
+      title: "List Notification"
   user:
     card_user:
       add_friend: "Add Friend"
@@ -50,6 +59,11 @@ en:
       confirm_friend: "Confirm"
       destroy_friend: "Remove Friend"
       send_message: "Send Message"
+      add_into_group: "Add"
+      remove_user_in_group: "Remove"
+      list_member: "List Member"
+      name: "Name: "
+      username: "Username: "
   contact:
     errors: "Have errors"
   back: "back"
@@ -58,3 +72,5 @@ en:
   room:
     you: "You"
     upload_file: "Upload a file"
+  notification:
+    noti_add_friend: "send request friend"

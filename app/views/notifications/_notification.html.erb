@@ -1,0 +1,9 @@
+<div class="notification">
+  <%= image_tag "add_friend_default.png", size: 50, class: "avatar-notification" %>
+  <div class="title">
+    <h4><%= notification.content %></h4>
+  </div>
+  <div class="time">
+    <p><%= notification.created_at.strftime("%F %T") %></p>
+  </div>
+</div>

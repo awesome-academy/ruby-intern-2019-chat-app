@@ -1,0 +1,9 @@
+$('#contacts ul #room_chat_<%=@room.id %>').remove();
+$('#contacts ul').prepend("<%= j render @room%>");
+$('.modal').modal('hide');
+
+var room_id = <%= @room.id %>;
+take_part_in_stream_room(room_id);
+
+$('#text-name-group').val(null);
+$('#text-description-group').val(null);

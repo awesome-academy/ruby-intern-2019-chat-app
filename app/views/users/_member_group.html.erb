@@ -1,0 +1,17 @@
+<div class="card card-user">
+  <%= image_tag "avatar_default.png", class: "card-img-top rounded-circle", size: Settings.carduser.size_image %>
+  <div class="card-body text-center">
+    <h4 class="card-title"><%= member_group.email %></h4>
+    <p class="card-text"><%= member_group.name %></p>
+    <p class="card-text"><%= member_group.username %></p>
+
+    <% if UserRoomsController.check_user_in_room member_group.id, @room_id %>
+      <%= link_to t("user.card_user.remove_user_in_group"), remove_user_in_group_path(room_id: @room_id, user_id: member_group.id), method: :delete, class: "btn btn-danger", remote: true, id: "remove_group_#{member_group.id}",data: {confirm: "Are you sure?"} %>
+      <%= link_to t("user.card_user.add_into_group"), add_user_to_group_path(room_id: @room_id, user_id: member_group.id), method: :post, class: "btn btn-primary user_wait", remote: true, id: "add_group_#{member_group.id}" %>
+
+  <% else %>
+      <%= link_to t("user.card_user.add_into_group"), add_user_to_group_path(room_id: @room_id, user_id: member_group.id), method: :post, class: "btn btn-primary", remote: true, id: "add_group_#{member_group.id}" %>
+      <%= link_to t("user.card_user.remove_user_in_group"), remove_user_in_group_path(room_id: @room_id, user_id: member_group.id), method: :delete, class: "btn btn-danger user_wait", remote: true, id: "remove_group_#{member_group.id}",data: {confirm: "Are you sure?"} %>
+  <% end %>
+  </div>
+</div>
