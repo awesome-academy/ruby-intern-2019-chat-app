@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     get "/get-message-room-chat", to: "messages#show"
     post "/new-chat", to: "messages#create"
     post "/upload-file-chat", to: "messages#upload_file"
+    get "/list-file-room", to: "rooms#list_file_room"
   end
 end

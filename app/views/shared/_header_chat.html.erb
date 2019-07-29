@@ -1,0 +1,7 @@
+<div class="contact-profile">
+  <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt=""/>
+  <p><%= @room.name %></p>
+  <div class="social-media">
+    <%= link_to '<i class="fa fa-file" aria-hidden="true"></i>'.html_safe, list_file_room_path(room_id: room.id), data: {toggle: "modal", target: "#list-file-room"}, class: "manage-file",  remote: true %>
+  </div>
+</div>

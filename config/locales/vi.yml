@@ -43,6 +43,8 @@ vi:
       title: "Danh sách lời mời kết bạn"
     modal_list_your_friend:
       title: "Danh sách bạn bè"
+    modal_show_file_room:
+      title: "Danh sách các file"
   user:
     card_user:
       add_friend: "Thêm bạn bè"

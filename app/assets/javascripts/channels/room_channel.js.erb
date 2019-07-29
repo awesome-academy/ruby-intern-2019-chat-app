@@ -30,7 +30,7 @@ $(function () {
           } else {
             if (data.user_id != gon.current_user_id) {
               $('<li class="replies" data-toggle="tooltip" title="' + data.user_name + " " + data.created_time_at + '"><img src="/assets/avatar_default-60f4ddba4688f232aae522362d6b7b50f4409493657563207aae202fa3aee263.png" class="avatar-right"><div class="content-chat-file">' +
-                '<img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file"><div class="step-content-chat-file"><a href="'
+                '<img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file"><div class="step-content-chat-file"><a target="_blank" href="'
                 + data.file.url +
                 '">'
                 + data.file_name +
@@ -44,7 +44,7 @@ $(function () {
               preview_chat = '<span>' + data.user_name + ': </span> Đã tải lên 1 file'
             } else {
               $('<li class="sent" data-toggle="tooltip" title="' + data.user_name + " " + data.created_time_at + '"><img src="/assets/avatar_default-60f4ddba4688f232aae522362d6b7b50f4409493657563207aae202fa3aee263.png" class="avatar-left"><div class="content-chat-file">' +
-                '<img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file"><div class="step-content-chat-file"><a href="' + data.file.url + '"><p>' + data.file_name + '</p> </a></div>' +
+                '<img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file"><div class="step-content-chat-file"><a target="_blank" href="' + data.file.url + '"><p>' + data.file_name + '</p> </a></div>' +
                 '<div class="step-content-size-save">' +
                 '<span>' + data.file_size + 'Kb</span>' +
                 '</div>' +

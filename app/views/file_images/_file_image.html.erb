@@ -1,0 +1,16 @@
+<div class="file text-center">
+  <a target="_blank" href="<%= file_image.file.url %>">
+    <div class="icon-file">
+      <img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file"/>
+    </div>
+    <div class="name-user-upload">
+      <%= file_image.message.user.name %>
+    </div>
+    <div class="title-file">
+      <p><%= file_image.file.url.split("/").last %></p>
+    </div>
+    <div class="size-file">
+      <p>Size: <%= file_image.file.size %>KB</p>
+    </div>
+  </a>
+</div>

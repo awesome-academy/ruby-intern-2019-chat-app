@@ -63,14 +63,8 @@
   </div>
 
   <div class="content">
-    <div class="contact-profile">
-      <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt=""/>
-      <p>Harvey Specter</p>
-      <div class="social-media">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-      </div>
+    <div class="head-chat">
+
     </div>
     <div class="notify">
       <% flash.each do |message_type, message| %>
@@ -82,7 +76,7 @@
         <%= render @messages %>
       </ul>
     </div>
-    <div class="message-input" , id="message-form-submit">
+    <div class="message-input" id="message-form-submit">
 
     </div>
   </div>
@@ -93,3 +87,4 @@
 <%= render "modal/modal_get_user" %>
 <%= render "modal/modal_get_list_friend_request" %>
 <%= render "modal/modal_list_your_friend" %>
+<%= render "modal/modal_show_file_room" %>

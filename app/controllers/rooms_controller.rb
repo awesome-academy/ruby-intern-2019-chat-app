@@ -12,6 +12,14 @@ class RoomsController < ApplicationController
     end
   end
 
+  def list_file_room
+    @files = FileImage.get_list_files_room params[:room_id]
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def room_params
