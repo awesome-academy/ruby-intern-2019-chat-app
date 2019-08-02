@@ -19,10 +19,9 @@
         <img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file">
 
         <div class="step-content-chat-file">
-         <a href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
+         <a target="_blank" href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
         </div>
         <div class="step-content-size-save">
-          <!--          <a class="icon-download"></a>-->
           <span><%= message.file_images.first.file.size %> Kb</span>
         </div>
       </div>
@@ -35,7 +34,7 @@
         <img class="avatar-file" src="https://vtask.net/img/icon_file_other.png" class="icon-type-file">
 
         <div class="step-content-chat-file">
-          <a href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
+          <a target="_blank" href="<%= message.file_images.first.file.url %>"> <%= message.file_images.first.file.url.split("/").last %></a>
         </div>
         <div class="step-content-size-save">
           <span><%= message.file_images.first.file.size %> Kb</span>

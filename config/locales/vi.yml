@@ -43,6 +43,15 @@ vi:
       title: "Danh sách lời mời kết bạn"
     modal_list_your_friend:
       title: "Danh sách bạn bè"
+    modal_show_file_room:
+      title: "Danh sách các file"
+    modal_create_group:
+      title: "Tạo nhóm"
+      name: "Tên nhóm"
+      description: "Mô tả"
+      submit: "Tạo nhóm"
+    modal_notification:
+      title: "Thông báo"
   user:
     card_user:
       add_friend: "Thêm bạn bè"
@@ -50,6 +59,11 @@ vi:
       confirm_friend: "Xác nhận"
       destroy_friend: "Hủy kết bạn"
       send_message: "Nhắn tin"
+      add_into_group: "Thêm"
+      remove_user_in_group: "Xóa"
+      list_member: "Danh sách thành viên"
+      name: "Tên: "
+      username: "Username: "
   contact:
     errors: "Đã xảy ra lỗi!"
   back: "Quay lại"
@@ -58,3 +72,5 @@ vi:
   room:
     you: "Bạn"
     upload_file: "Đã tải lên 1 file"
+  notification:
+    noti_add_friend: "đã gửi lời kết bạn cho bạn"

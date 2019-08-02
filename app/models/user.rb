@@ -17,7 +17,5 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
 
-  scope :search_user_by_email, (lambda do |email|
-    where email: email
-  end)
+  scope :search_user_by_email, ->(email){where email: email}
 end

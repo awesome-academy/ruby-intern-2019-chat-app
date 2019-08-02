@@ -1,12 +1,11 @@
 class MessagesController < ApplicationController
   def show
     @room_id = message_params[:room_id]
+    @room = Room.find_by id: @room_id
     @messages = Message.get_message_room @room_id
     @new_message = Message.new
 
-    respond_to do |format|
-      format.js
-    end
+    respond_to(&:js)
   end
 
   def create

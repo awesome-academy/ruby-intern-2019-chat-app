@@ -3,6 +3,8 @@ class FileImage < ApplicationRecord
   belongs_to :message
   mount_uploader :file, FileUploader
 
+  scope :get_list_files_room, ->(room_id){where room_id: room_id}
+
   def as_json options
     super(options)
       .merge(user_name: message.user.name, file_name: file.url.split("/").last,

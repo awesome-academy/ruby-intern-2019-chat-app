@@ -1,11 +1,11 @@
 <div class="wrap">
-  <%= form_with url: upload_file_chat_path(message: {room_id: @room_id, kind: 1, user_id: current_user.id, content:""}),remote: true, class: "image-upload" do |f| %>
+  <%= form_with url: upload_file_chat_path(message: {room_id: @room_id, kind: 1, user_id: current_user.id, content: ""}), remote: true, class: "image-upload" do |f| %>
     <%= f.label :file, '<i class="fa fa-paperclip attachment" aria-hidden="true"></i>'.html_safe %>
     <%= f.file_field :file, onchange: 'Rails.fire(this.form, "submit")' %>
   <% end %>
 
   <%= form_with model: @new_message, url: new_chat_path() do |form| %>
-    <%= form.text_field :content, placeholder: "Write your message..." %>
+    <%= form.text_field :content, placeholder: "Write your message...", :autocomplete => :off %>
     <%= form.hidden_field :room_id, value: @room_id %>
     <%= form.hidden_field :kind, value: 0 %>
     <%= form.hidden_field :user_id, value: current_user.id %>

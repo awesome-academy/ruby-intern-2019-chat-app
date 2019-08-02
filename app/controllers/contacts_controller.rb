@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact_one.save && @contact_two.save
         format.js
+        create_notification
       else
         flash[:danger] = t("contact.errors")
       end
@@ -42,18 +43,13 @@ class ContactsController < ApplicationController
     @contacts = Contact.get_list_friend_request current_user.id
     @users = @contacts.map{|c| User.find_by id: c.user_id_1}
 
-    respond_to do |format|
-      format.js
-    end
+    respond_to(&:js)
   end
 
   def list_your_friend
     @contacts = Contact.get_list_your_friend current_user.id
     @users = @contacts.map{|c| User.find_by id: c.user_id_2}
-
-    respond_to do |format|
-      format.js
-    end
+    respond_to(&:js)
   end
 
   private
@@ -74,5 +70,11 @@ class ContactsController < ApplicationController
       @contact_one = @contacts_one.first
       @contact_two = @contacts_two.first
     end
+  end
+
+  def create_notification
+    @content = current_user.name + t("notification.noti_add_friend")
+    Notification.create user_id: contact_params[:user_id_2],
+                        content: @content, kind: 1, status: 0
   end
 end

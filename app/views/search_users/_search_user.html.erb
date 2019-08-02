@@ -1,0 +1,5 @@
+<%= form_tag add_friend_into_group_path, method: :get, remote: true do %>
+  <%= email_field_tag :email,nil, :class => "form-control", placeholder: "Email"%>
+  <%= hidden_field_tag :room_id, @room_id %>
+  <%= submit_tag t("modal.modal_search_user.search_button"), :class => "btn btn-primary" %>
+<% end %>

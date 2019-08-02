@@ -2,13 +2,40 @@ class RoomsController < ApplicationController
   before_action :find_rooms, only: :create
 
   def create
-    create_room && return if @rooms.empty?
+    if @rooms.first.blank?
+      create_room
+      respond_to do |format|
+        if @room.save && @user_room.save
+          format.js
+        else
+          flash[:danger] = t("contact.errors")
+        end
+        return
+      end
+    else
+      @room = @rooms.first
+      @user_room = @room.user_rooms.first
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
 
-    @room = @rooms.first
-    @user_room = @room.user_rooms.first
+  def list_file_room
+    @files = FileImage.get_list_files_room params[:room_id]
 
+    respond_to(&:js)
+  end
+
+  def create_group
+    @room = Room.new name: params[:name], description: params[:description],
+      kind: 1, owner_id: current_user.id
     respond_to do |format|
-      format.js
+      if @room.save
+        format.js
+      else
+        flash[:danger] = t("contact.errors")
+      end
     end
   end
 
@@ -29,13 +56,5 @@ class RoomsController < ApplicationController
                      kind: room_params[:kind])
     @user_room = @room.user_rooms.build user_id: room_params[:user_id],
                                         admin: false
-
-    respond_to do |format|
-      if @room.save && @user_room.save
-        format.js
-      else
-        flash[:danger] = t("contact.errors")
-      end
-    end
   end
 end

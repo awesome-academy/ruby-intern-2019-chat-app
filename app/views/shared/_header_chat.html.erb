@@ -1,0 +1,18 @@
+<div class="contact-profile">
+  <% if @room.kind.zero? %>
+    <%= image_tag @room.user_rooms.first.user.avatar %>
+  <% else %>
+    <%= image_tag "group.png" %>
+  <% end %>
+  <p><%= @room.name %></p>
+  <div class="social-media">
+    <%= link_to '<i class="fa fa-file" aria-hidden="true"></i>'.html_safe, list_file_room_path(room_id: room.id), data: {toggle: "modal", target: "#list-file-room"}, class: "manage-file", remote: true %>
+    <% if @room.kind == 1 %>
+      <% @users = UserRoom.get_user_with_specific_room current_user.id, @room.id %>
+      <% if @room.owner_id == current_user.id || @users.first.admin %>
+        <%= link_to '<i class="fa fa-user-plus" aria-hidden="true"></i>'.html_safe, open_modal_add_friend_path(room_id: room.id), data: {toggle: "modal", target: "#form-search-user-add-group"}, class: "add-user", remote: true %>
+        <%= link_to '<i class="fa fa-user-times" aria-hidden="true"></i>'.html_safe, list_member_in_group_path(room_id: room.id), method: :get, data: {toggle: "modal", target: "#list-member-in-group"}, class: "add-user", remote: true %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

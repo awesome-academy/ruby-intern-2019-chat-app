@@ -69,8 +69,9 @@ a:hover {
 .btn-send-message {
   margin-top: 10px;
 }
+
 .room_chat_text {
-  color:white;
+  color: white;
   text-decoration: none;
   background-color: transparent;
 }
@@ -78,13 +79,12 @@ a:hover {
 #frame #slidepanel #search {
   background: #32465a;
 }
-.image-upload > input
-{
+
+.image-upload > input {
   display: none;
 }
 
-.image-upload img
-{
+.image-upload img {
   width: 80px;
   cursor: pointer;
 }
@@ -103,11 +103,63 @@ a:hover {
   padding: 2px;
   border-radius: 5px;
 }
-img.avatar-file{
+
+img.avatar-file {
   border-radius: 0%;
   width: 35px;
 }
 
 .replies .content-chat-file a {
   color: #2c3e50;
+}
+
+.manage-file {
+  color: black;
+}
+
+.file.text-center {
+  float: left;
+  margin: 2px;
+  width: 210px;
+  background: #909090;
+  height: 100px;
+}
+
+.add-group {
+  margin-left: 20px;
+}
+
+.add-user {
+  color: black;
+}
+
+.room_chat_text img.img-new-message {
+  width: 24px !important;
+  height: 16px !important;
+  float: right !important;
+}
+
+.img-notify {
+  margin-left: 20px;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.avatar-notification {
+  float: left;
+}
+
+.title h4 {
+  padding: 5px;
+  margin-left: 72px;
+  font-weight: bold;
+}
+
+.time p {
+  margin-left: 150px;
+}
+
+.notification {
+  clear: both;
+  margin-top: 20px;
 }

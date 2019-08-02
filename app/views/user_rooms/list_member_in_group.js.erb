@@ -1,0 +1,5 @@
+$('#content_user_in_group').html('');
+<% @user_rooms.each do |u| %>
+$('#content_user_in_group').append('<%= j render partial: "users/member_group", locals: {member_group: u.user, room_id: @room_id} %>')
+<% end %>
+$('#list-member-in-group').modal('show');
