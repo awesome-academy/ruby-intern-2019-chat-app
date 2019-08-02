@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.bigint "user_id_1"
     t.integer "user_id_2"
     t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id_1"], name: "index_contacts_on_user_id_1"
   end
 
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.bigint "message_id"
     t.bigint "room_id"
     t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_file_images_on_message_id"
     t.index ["room_id"], name: "index_file_images_on_room_id"
   end
@@ -34,7 +38,9 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.bigint "room_id"
     t.bigint "user_id"
     t.string "content"
-    t.integer "type"
+    t.integer "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_messages_on_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
@@ -44,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.string "content"
     t.bigint "user_id"
     t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
@@ -52,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.string "description"
     t.bigint "owner_id"
     t.integer "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_rooms_on_owner_id"
   end
 
@@ -59,6 +69,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.bigint "room_id"
     t.bigint "user_id"
     t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_user_rooms_on_room_id"
     t.index ["user_id"], name: "index_user_rooms_on_user_id"
   end
@@ -67,6 +79,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.bigint "message_id"
     t.bigint "user_id"
     t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_user_seens_on_message_id"
     t.index ["user_id"], name: "index_user_seens_on_user_id"
   end
@@ -79,6 +93,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_071456) do
     t.string "avatar"
     t.boolean "admin"
     t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

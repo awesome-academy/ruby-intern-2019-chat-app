@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :avatar
       t.boolean :admin
       t.string :username
+      t.timestamps
     end
   end
 end

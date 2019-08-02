@@ -5,6 +5,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :description
       t.references :owner, foreign_key: { to_table: :users }
       t.integer :type
+      t.timestamps
     end
   end
 end

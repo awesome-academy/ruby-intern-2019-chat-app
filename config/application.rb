@@ -13,5 +13,8 @@ module ChatApp
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.available_locales = [:vi, :en]
     config.i18n.default_locale = :en
+    config.time_zone = 'Asia/Ho_Chi_Minh'
+
+    config.active_record.default_timezone = :local
   end
 end
