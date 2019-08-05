@@ -1,15 +1,17 @@
 class UserRoomsController < ApplicationController
+  protect_from_forgery except: %i(list_member_in_group open_modal_add_friend)
+
   def create
     @user_room = UserRoom.new room_id: params[:room_id],
       user_id: params[:user_id], admin: false
     @member_group = @user_room.user
-    respond_to(&:js) if @user_room.save
+    respond_to(&:js) if @user_room.save!
   end
 
   def destroy
     @user_room = UserRoom.get_user_with_specific_room params[:user_id],
       params[:room_id]
-    @member_group = @user_room.first.user
+    @member_group = @user_room.first.user if @user_room.first.present?
     @room_id = params[:room_id]
     respond_to(&:js) if @user_room.first.present? && @user_room.first.destroy
   end

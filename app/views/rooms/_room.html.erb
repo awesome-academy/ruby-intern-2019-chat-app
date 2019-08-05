@@ -58,7 +58,6 @@
             <% else %>
               <% if room.messages.last.kind.zero? %>
                 <%= room.messages.last.user.name %>: <%= room.messages.last.content %>
-
               <% else %>
                 <%= room.messages.last.user.name %>: <%= t("room.upload_file") %>
               <% end %>

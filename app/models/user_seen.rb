@@ -1,4 +1,4 @@
 class UserSeen < ApplicationRecord
   belongs_to :message
-  has_many :users
+  belongs_to :user
 end

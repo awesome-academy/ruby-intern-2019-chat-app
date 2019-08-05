@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post "/upload-file-chat", to: "messages#upload_file"
     get "/list-file-room", to: "rooms#list_file_room"
     post "/create-group", to: "rooms#create_group"
-    get "/add-friend-into-group", to: "search_users#search_user_by_email_in_list_friend"
+    get "/add-friend-into-group", to: "search_users#search_by_email_in_list_friend"
     get "/open-modal-add-friend", to: "user_rooms#open_modal_add_friend"
     post "/add-user-to-group", to: "user_rooms#create"
     delete "/remove-user-in-group", to: "user_rooms#destroy"
